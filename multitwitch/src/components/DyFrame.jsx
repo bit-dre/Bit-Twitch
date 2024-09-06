@@ -1,7 +1,23 @@
 import { useEffect, useRef } from 'react';
-const twitchEmbedURL = "https://player.twitch.tv/js/embed/v1.js"
-function Dyframe({streamID}) {
+import useTwitchEmbed from '../hooks/useTwitchEmbed';
+const twitchEmbedURL = "https://player.twitch.tv/js/embed/v1.js";
+
+function Dyframe({streamID, options}) {
     const embedRef = useRef(null);
+    const isScriptLoaded = useTwitchEmbed(twitchEmbedURL);
+
+    useEffect(() => {
+        if (isScriptLoaded && window.Twitch) {
+            const player = window.Twitch.Player(embedRef.current, {
+                channel: streamID,
+                ...options,
+            });
+
+            return () => {
+                player.destroy();
+            };
+        }
+    }, [isScriptLoaded, streamID, options]);
     return (
         <div
             className='dyframe-container'

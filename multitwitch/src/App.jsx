@@ -12,7 +12,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Stream Embed Test</h1>
-      <Dyframe streamID="lacy" options={streamOptions}></Dyframe>
+      <Dyframe streamID='lacy' options={streamOptions}></Dyframe>
     </div>
   )
 }
