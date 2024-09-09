@@ -1,0 +1,1 @@
+// Putting Constants and hardcoded values, starting best practies for React. 
