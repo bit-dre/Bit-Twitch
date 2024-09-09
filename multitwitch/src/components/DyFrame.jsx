@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import useTwitchEmbed from '../hooks/useTwitchEmbed';
+import useTwitchEmbed from '../lib/hooks/useTwitchEmbed';
 const twitchEmbedURL = "https://player.twitch.tv/js/embed/v1.js";
 
 function Dyframe({streamID, options}) {
