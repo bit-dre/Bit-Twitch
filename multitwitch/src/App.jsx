@@ -1,20 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import Dyframe from './components/DyFrame.jsx';
+// src/App.jsx
+import './index.css';
+import React, { useState } from 'react';
+import NavBar from './components/NavBar';
+import './App.css';
 
 function App() {
-  const streamOptions = {
-    height: '480',
-    width: '940',
-    theme: 'dark',
-    autoplay: true,
-  };  
   return (
-    <div className='App'>
-      <h1>Stream Embed Test</h1>
-      <Dyframe streamID='lacy' options={streamOptions}></Dyframe>
+    <div>
+      <NavBar />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
