@@ -102,7 +102,7 @@ export const SearchIcon = ({ className }) => (
     role="presentation"
   >
     <path
-      d="..." // Replace with the actual path data from your SVG
+      d="M19 19L14.8917 14.8917M17.1111 9.55556C17.1111 13.7284 13.7284 17.1111 9.55556 17.1111C5.38274 17.1111 2 13.7284 2 9.55556C2 5.38274 5.38274 2 9.55556 2C13.7284 2 17.1111 5.38274 17.1111 9.55556Z"
       stroke="currentColor"
       strokeWidth="1.66667"
       strokeLinecap="round"
@@ -145,13 +145,23 @@ export const SunIcon = ({ className }) => (
   </svg>
 );
 
-export {
-  ChevronRightIcon,
-  KeyboardIcon,
-  LanguageIcon,
-  MoreIcon,
-  NightIcon,
-  SearchIcon,
-  SettingsIcon,
-  SunIcon,
-};
+// InfoIcon Component
+export const InfoIcon = ({ className }) => (
+  <svg
+    className={className}
+    width="21"
+    height="21"
+    viewBox="0 0 21 21"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.335 13.669V10.335M10.335 7.001H10.3433M18.67 10.335C18.67 14.9383 14.9383 18.67 10.335 18.67C5.73171 18.67 2 14.9383 2 10.335C2 5.73171 5.73171 2 10.335 2C14.9383 2 18.67 5.73171 18.67 10.335Z"
+      stroke="#EAEBF1"
+      strokeWidth="1.57143"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
