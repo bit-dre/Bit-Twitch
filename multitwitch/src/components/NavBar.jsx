@@ -1,52 +1,61 @@
 import React from 'react';
-import searchIcon from '../assets/Search.svg'
-import moreIcon from '../assets/More.svg'
-import hypercubeIcon from '../assets/Hypercube.svg'
-// import Button from './Button';
-// import IconButton from './IconButton';
-// import SearchBar from './SearchBar';
-// import { colors, fonts } from '../config/theme';
+import { SearchIcon, MoreIcon } from '../assets/Icons';
+import hypercubeIcon from '../assets/Hypercube.svg';
+import IconButton from './IconButton';
+import MoreOptionsMenu from './MoreOptionsMenu';
+import { themes } from '../config/theme';
 
-const NavBar = () => {
+const NavBar = ({ theme }) => {
+  const currentTheme = themes[theme.name];
   return (
-    <nav className="bg-[#18181b] text-white flex items-center h-12 px-4 w-full">
+    <nav className={`flex items-center h-12 px-4 w-full`} style={{ backgroundColor: currentTheme.colors.primaryBackground, color: currentTheme.colors.primaryText }}>
+
       {/* Logo */}
       <div className="mr-4">
         <img src={hypercubeIcon} alt="Logo" className="w-5 h-5" />
       </div>
-
+    
       {/* Navigation Links */}
       <div className="flex space-x-4">
-        <button className="bg-transparent px-4 py-1 text-white hover:text-[#5bb5ec] hover:bg-[#3b3b3e] rounded p-1 font-bold text-lg font-maven">
+        <button
+          style={{ color: currentTheme.colors.primaryText, backgroundColor: 'transparent' }}
+          className="px-4 py-1 hover:text-blue-500 hover:bg-gray-700 rounded p-1 font-bold text-lg"
+        >
           Following
         </button>
-        <button className="bg-transparent px-4 py-1 text-white hover:text-[#5bb5ec] hover:bg-[#3b3b3e] rounded p-1 font-bold text-lg font-maven">
+        <button
+          style={{ color: currentTheme.colors.primaryText, backgroundColor: 'transparent' }}
+          className="px-4 py-1 hover:text-blue-500 hover:bg-gray-700 rounded p-1 font-bold text-lg"
+        >
           Theater Mode
         </button>
       </div>
 
       {/* Search Input */}
-      <div className="ml-4 flex items-center bg-[#1f1f23] rounded p-1 px-3 py-1 shadow-inner border border-[#3b3b3e] hover:border-[#49b4f6] transition-colors duration-300 w-[325px]">
-    <input
-        type="text"
-        placeholder="Search"
-        className="bg-transparent outline-none text-white placeholder-gray-400 px-2 flex-grow font-bold"
-    />
-    <button className="text-gray-400 ml-2">
-        <img src={searchIcon} alt="Search" className="w-5 h-5" />
-    </button>
-    </div>
-      {/* Pushing rest of elements to the right */}
-      <div className="flex-grow"></div>
-      {/* Three Dots Icon */}
-      <div className="ml-4 mr-2 cursor-pointer flex items-center hover:bg-[#3b3b3e] rounded p-2">
-        <button className="text-gray-400">
-            <img src={moreIcon} alt="More" className="w-5 h-5" />
-        </button>
+      <div
+        style={{ backgroundColor: currentTheme.colors.secondaryBackground, borderColor: currentTheme.colors.borderDefault }}
+        className="ml-4 flex items-center rounded p-1 px-3 py-1 shadow-inner transition-colors duration-300 w-[325px] border"
+      >
+        <input
+          type="text"
+          placeholder="Search"
+          style={{ color: currentTheme.colors.primaryText }}
+          className="bg-transparent outline-none placeholder-gray-500 px-2 flex-grow font-bold"
+        />
+        <IconButton icon={SearchIcon} ariaLabel="Search" className="text-gray-400 ml-2" />
       </div>
 
+      {/* Pushing rest of elements to the right */}
+      <div className="flex-grow"></div>
+
+      {/* Three Dots Icon */}
+      <MoreOptionsMenu theme={theme} />
+
       {/* Login Button */}
-      <button className="bg-transparent px-4 py-1 text-white hover:text-[#5bb5ec] hover:bg-[#3b3b3e] rounded p-1 font-bold text-lg font-maven">
+      <button
+        style={{ color: currentTheme.colors.primaryText, backgroundColor: 'transparent' }}
+        className="px-4 py-1 hover:text-blue-500 hover:bg-gray-700 rounded p-1 font-bold text-lg"
+      >
         Login
       </button>
     </nav>

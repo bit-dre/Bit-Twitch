@@ -11,7 +11,7 @@ const IconButton = ({ icon: Icon, onClick, ariaLabel, className }) => {
     <button
       onClick={onClick}
       aria-label={ariaLabel}
-      className={`flex items-center justify-center p-2 rounded-full hover:bg-gray-700 transition-colors duration-200 ${className}`}
+      className={`flex items-center justify-center p-2 rounded hover:bg-gray-700 transition-colors duration-200 ${className}`}
     >
       <Icon className="w-5 h-5 text-current" />
     </button>
