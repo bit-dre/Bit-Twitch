@@ -2,10 +2,10 @@ import React from 'react';
 import searchIcon from '../assets/Search.svg'
 import moreIcon from '../assets/More.svg'
 import hypercubeIcon from '../assets/Hypercube.svg'
-import Button from './Button';
-import IconButton from './IconButton';
-import SearchBar from './SearchBar';
-import { colors, fonts } from '../config/theme';
+// import Button from './Button';
+// import IconButton from './IconButton';
+// import SearchBar from './SearchBar';
+// import { colors, fonts } from '../config/theme';
 
 const NavBar = () => {
   return (
