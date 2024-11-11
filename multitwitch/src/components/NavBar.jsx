@@ -1,12 +1,18 @@
+import React from 'react';
 import searchIcon from '../assets/Search.svg'
 import moreIcon from '../assets/More.svg'
 import hypercubeIcon from '../assets/Hypercube.svg'
+import Button from './Button';
+import IconButton from './IconButton';
+import SearchBar from './SearchBar';
+import { colors, fonts } from '../config/theme';
+
 const NavBar = () => {
   return (
     <nav className="bg-[#18181b] text-white flex items-center h-12 px-4 w-full">
       {/* Logo */}
       <div className="mr-4">
-        <img src={hypercubeIcon} alt="More" className="w-5 h-5" />
+        <img src={hypercubeIcon} alt="Logo" className="w-5 h-5" />
       </div>
 
       {/* Navigation Links */}
