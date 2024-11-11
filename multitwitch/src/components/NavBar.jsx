@@ -20,7 +20,7 @@ const NavBar = () => {
       </div>
 
       {/* Search Input */}
-      <div className="ml-4 flex items-center bg-[#1f1f23] rounded p-1 px-3 py-1 shadow-inner border border-[#3b3b3e] hover:border-[#49b4f6] transition-colors duration-200 w-[325px]">
+      <div className="ml-4 flex items-center bg-[#1f1f23] rounded p-1 px-3 py-1 shadow-inner border border-[#3b3b3e] hover:border-[#49b4f6] transition-colors duration-300 w-[325px]">
     <input
         type="text"
         placeholder="Search"
@@ -33,7 +33,7 @@ const NavBar = () => {
       {/* Pushing rest of elements to the right */}
       <div className="flex-grow"></div>
       {/* Three Dots Icon */}
-      <div className="ml-4 mr-4 cursor-pointer flex items-center hover:bg-[#3b3b3e] rounded p-2 transition-colors duration-200">
+      <div className="ml-4 mr-2 cursor-pointer flex items-center hover:bg-[#3b3b3e] rounded p-2">
         <button className="text-gray-400">
             <img src={moreIcon} alt="More" className="w-5 h-5" />
         </button>
