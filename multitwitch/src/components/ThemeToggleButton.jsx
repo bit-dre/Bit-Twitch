@@ -11,14 +11,14 @@ const ThemeToggleButton = ({ theme, onToggle }) => {
 
     return (
         <div
-            className={`w-14 h-8 flex items-center rounded-full p-1 cursor-pointer transition-all duration-300 ${
+            className={`w-10 h-5 flex items-center rounded-full p-1 cursor-pointer transition-all duration-300 ${
                 isLightMode ? 'bg-purple-300' : 'bg-gray-800'
             }`}
             onClick={handleToggle}
         >
             <div 
-                className={`w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300 transform ${
-                    isLightMode ? 'translate-x-6 bg-white' : 'translate-x-0 bg-gray-700'
+                className={`w-4 h-4 rounded-full flex items-center justify-center transition-transform duration-300 transform ${
+                    isLightMode ? 'translate-x-4 bg-white' : 'translate-x-0 bg-gray-700'
                 }`}
             >
                 {isLightMode ? (
