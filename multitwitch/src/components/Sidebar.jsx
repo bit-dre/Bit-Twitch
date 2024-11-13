@@ -5,7 +5,7 @@ import {
   PlusIcon,
   PersonIcon,
   FavoriteIcon,
-} from '../assets/Icons';
+} from '../assets/Icons.jsx';
 
 const Sidebar = ({ theme }) => {
   return (
@@ -15,14 +15,15 @@ const Sidebar = ({ theme }) => {
     >
       {/* Your Streamers Section */}
       <div className="flex items-center justify-between mb-6">
-        <span className="font-bold text-lg">Your Streamers</span>
-        <IconButton icon={CollapseIcon} ariaLabel="Collapse Sidebar" className="text-gray-400 w-5 h-5" />
+          <span className="font-bold text-lg">Your Streamers</span>
+          <IconButton icon={CollapseIcon} ariaLabel="Collapse Sidebar" className="text-gray-400"/>
       </div>
+
 
       {/* Main Controls Section */}
       <div className="flex items-center justify-between mb-4">
         <span className="font-bold text-lg">Main Controls</span>
-        <IconButton icon={PlusIcon} ariaLabel="Add Controls" className="text-gray-400 w-6 h-6" />
+        <IconButton icon={PlusIcon} ariaLabel="Open controls" className="text-gray-400"/> 
       </div>
 
       {/* Theater Section */}
@@ -32,10 +33,10 @@ const Sidebar = ({ theme }) => {
           {[...Array(4)].map((_, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <PersonIcon className="text-gray-400 w-5 h-5" />
+                <PersonIcon className="text-gray-400 w-5 h-8" />
                 <span className="text-sm">List Option</span>
               </div>
-              <FavoriteIcon className="text-gray-400 w-5 h-5" />
+              <FavoriteIcon className="text-gray-400 w-9 h-6" />
             </div>
           ))}
         </div>
@@ -48,10 +49,10 @@ const Sidebar = ({ theme }) => {
           {[...Array(6)].map((_, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <PersonIcon className="text-gray-400 w-5 h-5" />
+                <PersonIcon className="text-gray-400 w-5 h-8" />
                 <span className="text-sm">List Option</span>
               </div>
-              <FavoriteIcon className="text-gray-400 w-5 h-5" />
+              <FavoriteIcon className="text-gray-400 w-9 h-6" />
             </div>
           ))}
         </div>
@@ -65,10 +66,10 @@ const Sidebar = ({ theme }) => {
           {[...Array(2)].map((_, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <PersonIcon className="text-gray-400 w-5 h-5" />
+                <PersonIcon className="text-gray-400 w-5 h-8" />
                 <span className="text-sm">List Option</span>
               </div>
-              <FavoriteIcon className="text-gray-400 w-5 h-5" />
+              <FavoriteIcon className="text-gray-400 w-9 h-6" />
             </div>
           ))}
         </div>
