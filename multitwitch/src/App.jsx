@@ -3,25 +3,27 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Sidebar from './components/Sidebar';
 import Theater from './components/Theater';
-import { themes } from './config/theme';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'dark' : true;
+    return savedTheme ? savedTheme === 'dark' : true; // Default to dark mode
   });
 
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
-  const currentTheme = isDarkMode ? themes.dark : themes.light;
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   const [theaterStreamers, setTheaterStreamers] = useState([
-    'aussieantics',
-    'mrsavage',
-    'mongraal',
-    'kaicenat',
+    'faxuty',
+    'hydraszn',
+    'lacy',
+    'plaqueboymax',
   ]);
 
   const removeStreamer = (streamer) => {
@@ -31,28 +33,20 @@ const App = () => {
   };
 
   return (
-    <div
-      style={{
-        background: currentTheme.colors.primaryBackground,
-        color: currentTheme.colors.primaryText,
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <NavBar theme={currentTheme} />
+    <div className="min-h-screen flex flex-col bg-[var(--primary-background)] text-[var(--primary-text)]">
+      <NavBar theme={isDarkMode ? 'dark' : 'light'} onThemeToggle={toggleTheme} />
 
       {/* Main Content Area */}
-      <div style={{ display: 'flex', flexGrow: 1, overflow: 'hidden' }}>
+      <div className="flex flex-grow overflow-hidden">
         {/* Sidebar */}
         <Sidebar
-          theme={currentTheme}
+          theme={isDarkMode ? 'dark' : 'light'}
           theaterStreamers={theaterStreamers}
           removeStreamer={removeStreamer}
         />
 
         {/* Theater */}
-        <div style={{ flexGrow: 1 }}>
+        <div className="flex-grow">
           <Theater streamers={theaterStreamers} />
         </div>
       </div>
