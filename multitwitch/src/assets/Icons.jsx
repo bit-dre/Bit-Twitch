@@ -4,7 +4,7 @@ import React from 'react';
 export const PlusIcon = ({ className }) => (
   <svg
     className={className}
-    viewBox='0 0 21 21'
+    viewBox='0 0 20 20'
     fill='none'
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
@@ -245,7 +245,7 @@ export const InfoIcon = ({ className }) => (
   >
     <path
       d="M10.335 13.669V10.335M10.335 7.001H10.3433M18.67 10.335C18.67 14.9383 14.9383 18.67 10.335 18.67C5.73171 18.67 2 14.9383 2 10.335C2 5.73171 5.73171 2 10.335 2C14.9383 2 18.67 5.73171 18.67 10.335Z"
-      stroke="#EAEBF1"
+      stroke="currentColor"
       strokeWidth="1.57143"
       strokeLinecap="round"
       strokeLinejoin="round"
