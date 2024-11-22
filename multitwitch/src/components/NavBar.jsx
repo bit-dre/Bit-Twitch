@@ -1,34 +1,22 @@
 import React from 'react';
-import { SearchIcon, MoreIcon } from '../assets/Icons';
-import hypercubeIcon from '../assets/Hypercube.svg';
-import IconButton from './IconButton';
 import MoreOptionsMenu from './MoreOptionsMenu';
-import { themes } from '../config/theme';
 import SearchBar from './SearchBar';
 
-const NavBar = ({ theme }) => {
-  const currentTheme = themes[theme.name];
+const NavBar = ({ theme, onThemeToggle }) => {
   return (
-    <nav className={`flex items-center h-12 px-4 w-full rounded-md shadow-md`} style={{ backgroundColor: currentTheme.colors.primaryBackground, color: currentTheme.colors.primaryText }}>
+    <nav className="flex items-center h-12 px-4 w-full rounded-md shadow-md bg-[var(--primary-background)] text-[var(--primary-text)]">
 
       {/* Logo */}
       <div className="mr-4">
-        <img src={hypercubeIcon} alt="Logo" className="w-5 h-5" />
       </div>
     
       {/* Navigation Links */}
       <div className="flex space-x-4">
-        <button
-          style={{ color: currentTheme.colors.primaryText, backgroundColor: 'transparent' }}
-          className="px-4 py-1 hover:text-blue-500 hover:bg-gray-700 rounded p-1 font-medium text-lg"
-        >
+        <button className="px-4 py-1 hover:text-[var(--secondary-text)] hover:bg-[var(--hover-background)] rounded-md font-medium text-lg bg-transparent">
           Following
         </button>
-        <button
-          style={{ color: currentTheme.colors.primaryText, backgroundColor: 'transparent' }}
-          className="px-4 py-1 hover:text-blue-500 hover:bg-gray-700 rounded p-1 font-medium text-lg"
-        >
-          Theater Mode
+        <button className="px-4 py-1 hover:text-[var(--secondary-text)] hover:bg-[var(--hover-background)] rounded-md font-medium text-lg bg-transparent">
+          Theater
         </button>
       </div>
 
@@ -39,13 +27,10 @@ const NavBar = ({ theme }) => {
       <div className="flex-grow"></div>
 
       {/* Three Dots Icon */}
-      <MoreOptionsMenu theme={theme} />
+      <MoreOptionsMenu theme={theme} onThemeToggle={onThemeToggle} />
 
       {/* Login Button */}
-      <button
-        style={{ color: currentTheme.colors.primaryText, backgroundColor: 'transparent' }}
-        className="px-4 py-1 hover:text-blue-500 hover:bg-gray-700 rounded p-1 font-medium text-lg"
-      >
+      <button className="px-4 py-1 ml-2 hover:text-[var(--secondary-text)] hover:bg-[var(--hover-background)] rounded-md font-medium text-lg bg-transparent">
         Login
       </button>
     </nav>
