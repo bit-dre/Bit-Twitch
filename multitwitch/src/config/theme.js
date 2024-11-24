@@ -1,18 +1,17 @@
-// Theme configurations for both dark and light modes
 const themes = {
   // Dark theme configuration
   dark: {
     name: 'dark',
     colors: {
-      primaryBackground: '#18181b',
-      secondaryBackground: '#1f1f23',
-      hoverBackground: '#3b3b3e',
-      accent: '#49b4f6',
-      primaryText: '#ffffff',
+      primaryBackground: '#202123',
+      secondaryBackground: '#343541',
+      hoverBackground: '#2b2c2e',
+      accent: '#10a37f',
+      primaryText: '#d1d5db',
       secondaryText: '#5bb5ec',
-      placeholderText: 'rgba(255, 255, 255, 0.5)',
+      placeholderText: 'rgba(209, 213, 219, 0.5)',
       borderDefault: '#3b3b3e',
-      borderHover: '#49b4f6',
+      borderHover: '#10a37f',
     },
   },
   // Light theme configuration
@@ -20,21 +19,21 @@ const themes = {
     name: 'light',
     colors: {
       primaryBackground: '#ffffff',
-      secondaryBackground: '#f5f5f5',
-      hoverBackground: '#e0e0e0',
-      accent: '#007acc',
-      primaryText: '#000000',
+      secondaryBackground: '#f7f7f8',
+      hoverBackground: '#e3e4e6',
+      accent: '#1a7f64',
+      primaryText: '#3c3d3e',
       secondaryText: '#007acc',
-      placeholderText: 'rgba(0, 0, 0, 0.5)',
-      borderDefault: '#cccccc',
-      borderHover: '#007acc',
+      placeholderText: 'rgba(60, 61, 62, 0.5)',
+      borderDefault: '#e5e7eb',
+      borderHover: '#1a7f64',
     },
   },
 };
 
 // Font configuration used across the application
 const fonts = {
-  mainFont: 'font-maven',
+  mainFont: 'Inter, sans-serif',
 };
 
 export { themes, fonts };

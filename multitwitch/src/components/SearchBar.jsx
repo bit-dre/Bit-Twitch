@@ -5,7 +5,7 @@ import { SearchIcon } from '../assets/Icons';
 const SearchBar = () => {
     return (
         <div
-            className="flex items-center justify-center mx-auto rounded p-1 px-4 py-1 shadow-inner transition-colors duration-300 w-[400px] border border-gray-600 bg-transparent">
+            className="flex items-center justify-center mx-6 rounded p-1 px-4 py-0 shadow-inner transition-colors duration-300 w-[400px] border border-gray-600 bg-transparent">
             <input 
                 type="text"
                 placeholder="Search"

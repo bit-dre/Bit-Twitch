@@ -20,10 +20,10 @@ const App = () => {
   };
 
   const [theaterStreamers, setTheaterStreamers] = useState([
-    'faxuty',
-    'hydraszn',
-    'lacy',
-    'plaqueboymax',
+    'kaicenat',
+    'npen',
+    'aussieantics',
+    'mrsavage',
   ]);
 
   const removeStreamer = (streamer) => {

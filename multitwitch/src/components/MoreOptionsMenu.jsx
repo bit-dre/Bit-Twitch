@@ -49,7 +49,9 @@ const MoreOptionsMenu = ({ theme, onThemeToggle }) => {
               <MenuItem 
                 icon={MoonIcon}
                 label='Theme'
-                rightIcon={ThemeToggleButton}
+                rightIcon={() => (
+                  <ThemeToggleButton theme={theme.name} onToggle={onThemeToggle} className="w-8 h-4" />
+                )}
                 rightIconProps={{ theme: theme.name, onToggle: onThemeToggle, className: "w-8 h-4" }}
                 noHover
               />
