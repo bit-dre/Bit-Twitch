@@ -264,9 +264,9 @@ export const CancelIcon = ({ className }) => (
     <path 
       d="M5.18663 5.18666L15.5599 15.5599M5.18663 15.5599L15.5599 5.18666" 
       stroke="currentColor" 
-      stroke-width="1.70909" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"
+      strokeWidth="1.70909" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -282,9 +282,9 @@ export const CutIcon = ({ className }) => (
     <path 
       d="M17.1667 3.83333L7.26667 13.7333M12.5583 12.5667L17.1667 17.1667M7.26667 7.26667L10.5 10.5M8 5.5C8 6.88071 6.88071 8 5.5 8C4.11929 8 3 6.88071 3 5.5C3 4.11929 4.11929 3 5.5 3C6.88071 3 8 4.11929 8 5.5ZM8 15.5C8 16.8807 6.88071 18 5.5 18C4.11929 18 3 16.8807 3 15.5C3 14.1193 4.11929 13 5.5 13C6.88071 13 8 14.1193 8 15.5Z" 
       stroke="currentColor" 
-      stroke-width="1.67273" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"
+      strokeWidth="1.67273" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -301,14 +301,14 @@ export const PauseIcon = ({ className }) => (
     d="M8.66667 3H5V17.6667H8.66667V3Z" 
     stroke="currentColor" 
     stroke-width="1.84" 
-    stroke-linecap="round" 
-    stroke-linejoin="round"/>
+    strokeLinecap="round" 
+    strokeLinejoin="round"/>
   <path 
     d="M16 3H12.3333V17.6667H16V3Z" 
     stroke="currentColor" 
-    stroke-width="1.84" 
-    stroke-linecap="round" 
-    stroke-linejoin="round"/>
+    strokeWidth="1.84" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"/>
   </svg>
 );
 
@@ -323,13 +323,13 @@ export const PlayIcon = ({ className }) => (
   <path 
      d="M4 3L15.6667 10.5L4 18V3Z" 
      stroke="currentColor" 
-     stroke-width="2.07273" 
-     stroke-linecap="round" 
-     stroke-linejoin="round"/>
+     strokeWidth="2.07273" 
+     strokeLinecap="round" 
+     strokeLinejoin="round"/>
   </svg>
 );
 
-export const TrashIcon = ({ className }) => (
+export const RemoveIcon = ({ className }) => (
   <svg     
     className={className}
     width="20"
@@ -340,9 +340,9 @@ export const TrashIcon = ({ className }) => (
   <path 
     d="M3 5.33333H4.66667M4.66667 5.33333H18M4.66667 5.33333V17C4.66667 17.442 4.84226 17.866 5.15482 18.1785C5.46738 18.4911 5.89131 18.6667 6.33333 18.6667H14.6667C15.1087 18.6667 15.5326 18.4911 15.8452 18.1785C16.1577 17.866 16.3333 17.442 16.3333 17V5.33333M7.16667 5.33333V3.66667C7.16667 3.22464 7.34226 2.80072 7.65482 2.48816C7.96738 2.17559 8.39131 2 8.83333 2H12.1667C12.6087 2 13.0326 2.17559 13.3452 2.48816C13.6577 2.80072 13.8333 3.22464 13.8333 3.66667V5.33333M8.83333 9.5V14.5M12.1667 9.5V14.5" 
     stroke="currentColor" 
-    stroke-width="1.792" 
-    stroke-linecap="round" 
-    stroke-linejoin="round"/>
+    strokeWidth="1.792" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"/>
   </svg>
 );
 
@@ -357,8 +357,8 @@ export const ReloadIcon = ({ className }) => (
   <path 
      d="M2 3.74831V8.24885M2 8.24885H6.50053M2 8.24885L5.48041 4.97846C6.28657 4.1719 7.2839 3.5827 8.37936 3.26584C9.47482 2.94898 10.6327 2.91478 11.7449 3.16644C12.8572 3.4181 13.8876 3.94741 14.7399 4.70499C15.5923 5.46257 16.2388 6.42372 16.6192 7.49876M18.5019 15.7497V11.2492M18.5019 11.2492H14.0014M18.5019 11.2492L15.0215 14.5196C14.2154 15.3261 13.218 15.9153 12.1226 16.2322C11.0271 16.5491 9.86926 16.5833 8.75701 16.3316C7.64477 16.0799 6.61439 15.5506 5.76204 14.7931C4.90969 14.0355 4.26314 13.0743 3.88272 11.9993" 
      stroke="currentColor" 
-     stroke-width="2.09479" 
-     stroke-linecap="round" 
-     stroke-linejoin="round"/>
+     strokeWidth="2.09479" 
+     strokeLinecap="round" 
+     strokeLinejoin="round"/>
   </svg>
 );

@@ -3,34 +3,43 @@ import useTwitchEmbedScript from '../lib/hooks/useTwitchEmbedScript';
 
 const Theater = ({ streamers = [] }) => {
   const isScriptLoaded = useTwitchEmbedScript();
-  const containerRefs = useRef([]);
+  const containerRefs = useRef({});
 
   useEffect(() => {
     if (isScriptLoaded) {
-      // Clear existing embeds
-      containerRefs.current.forEach((ref) => {
-        if (ref) {
-          ref.innerHTML = '';
+      // Only create new embeds for streamers that don't already have a player
+      streamers.forEach((streamer) => {
+        if (
+          containerRefs.current[streamer.id] &&
+          !containerRefs.current[streamer.id]?.hasChildNodes()
+        ) {
+          const options = {
+            width: '100%',
+            height: '100%',
+            channel: streamer.name,
+            parent: [window.location.hostname],
+            layout: 'video', // Removes the chat
+            autoplay: true,
+            muted: false,
+          };
+
+          // Ensure Twitch object is available
+          if (window.Twitch && window.Twitch.Player) {
+            const player = new window.Twitch.Player(`twitch-embed-${streamer.id}`, options);
+            player.addEventListener(window.Twitch.Player.READY, () => {
+              player.setMuted(true); // Mute the player initially
+            });
+          } else {
+            console.error('Twitch.Player is not available');
+          }
         }
       });
 
-      // Create new embeds
-      streamers.forEach((streamer, index) => {
-        const options = {
-          width: '100%',
-          height: '100%',
-          channel: streamer,
-          parent: [window.location.hostname],
-          layout: 'video', // Removes the chat
-          autoplay: true,
-          muted: false,
-        };
-
-        // Ensure Twitch object is available
-        if (window.Twitch && window.Twitch.Player) {
-          new window.Twitch.Player(`twitch-embed-${index}`, options);
-        } else {
-          console.error('Twitch.Player is not available');
+      // Remove players that are no longer in the streamers list
+      Object.keys(containerRefs.current).forEach((key) => {
+        const ref = containerRefs.current[key];
+        if (ref && !streamers.find((streamer) => streamer.id === parseInt(key))) {
+          ref.innerHTML = ''; // Clear existing embed if the streamer is removed
         }
       });
     }
@@ -73,9 +82,9 @@ const Theater = ({ streamers = [] }) => {
 
   return (
     <div
+      className="h-full"
       style={{
         ...gridStyle,
-        gap: '10px',
         width: '100%',
         height: '100%',
         backgroundColor: '#000',
@@ -83,9 +92,11 @@ const Theater = ({ streamers = [] }) => {
     >
       {streamers.map((streamer, index) => (
         <div
-          key={index}
-          ref={(el) => (containerRefs.current[index] = el)}
-          id={`twitch-embed-${index}`}
+          key={streamer.id}
+          ref={(el) => {
+            if (el) containerRefs.current[streamer.id] = el;
+          }}
+          id={`twitch-embed-${streamer.id}`}
           style={{
             width: '100%',
             height: '100%',

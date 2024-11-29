@@ -1,10 +1,18 @@
 import React from 'react';
 
-const MenuItem = ({ icon: Icon, label, rightIcon: RightIcon, rightIconProps = {}, noHover = false, onClick }) => {
+const ListItem = ({
+  icon: Icon,
+  label,
+  rightIcon: RightIcon,
+  rightIconProps = {},
+  noHover = false,
+  onClick,
+  additionalClass = '',
+}) => {
   return (
     <div
       onClick={onClick}
-      className={`${noHover ? '' : 'hover:bg-[var(--hover-background)]'} text-[var(--primary-text)] flex items-center justify-between rounded-md px-2 py-2 text-sm cursor-pointer`}
+      className={`${noHover ? '' : 'hover:bg-[var(--hover-background)]'} text-[var(--primary-text)] flex items-center justify-between rounded-md px-2 py-2 text-sm cursor-pointer ${additionalClass}`}
       role="menuitem"
     >
       <div className="flex items-center">
@@ -16,4 +24,4 @@ const MenuItem = ({ icon: Icon, label, rightIcon: RightIcon, rightIconProps = {}
   );
 };
 
-export default MenuItem;
+export default ListItem;

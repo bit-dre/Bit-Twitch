@@ -3,7 +3,7 @@ import { MoreIcon, LanguageIcon, KeyboardIcon, SettingsIcon, InfoIcon, ChevronRi
 import IconButton from './IconButton';
 import ThemeToggleButton from './ThemeToggleButton';
 import { themes } from '../config/theme';
-import MenuItem from './MenuItem';
+import ListItem from './ListItem';
 
 const MoreOptionsMenu = ({ theme, onThemeToggle }) => {
   const currentTheme = themes[theme.name];
@@ -46,7 +46,7 @@ const MoreOptionsMenu = ({ theme, onThemeToggle }) => {
           <div className="px-2 py-1">  
           {/* Theme Option */}
             <div className="py-1" role="menu" area-orientation="vertical" aria-lavelledby="options-menu">
-              <MenuItem 
+              <ListItem 
                 icon={MoonIcon}
                 label='Theme'
                 rightIcon={() => (
@@ -55,22 +55,22 @@ const MoreOptionsMenu = ({ theme, onThemeToggle }) => {
                 rightIconProps={{ theme: theme.name, onToggle: onThemeToggle, className: "w-8 h-4" }}
                 noHover
               />
-              <MenuItem 
+              <ListItem 
                 icon={LanguageIcon}
                 label='Language'
                 rightIcon={ChevronRightIcon}
                 rightIconProps={{ className: "w-4 h-4"}}
               />
-              <MenuItem 
+              <ListItem 
                 icon={KeyboardIcon}
                 label='Keyboard Shortcuts'
               />
-              <MenuItem 
+              <ListItem 
                 icon={SettingsIcon}
                 label="Settings"
               />
               <hr className="w-40 mx-auto my-2 border-[var(--border-default)]" />
-              <MenuItem
+              <ListItem
                 icon={InfoIcon}
                 label="Info"
               />
