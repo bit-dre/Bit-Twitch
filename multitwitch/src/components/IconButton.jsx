@@ -10,10 +10,10 @@ const IconButton = ({ icon: Icon, ariaLabel, className, ...props }) => {
   return (
     <button
       aria-label={ariaLabel}
-      className={`p-2 rounded placeholder:${className}`}
+      className={`rounded placeholder:${className}`}
       {...props}
     >
-      <Icon className="w-5 h-5" />
+      <Icon className="w-6 h-6" />
     </button>
   );
 };
