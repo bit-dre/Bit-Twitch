@@ -362,3 +362,31 @@ export const ReloadIcon = ({ className }) => (
      strokeLinejoin="round"/>
   </svg>
 );
+
+export const UnmutedIcon = ({ className }) => (
+  <svg     
+    className={className}
+    width="19"
+    height="14"
+    viewBox="0 0 19 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"> 
+  <path 
+     d="M15.225 1C16.7873 2.56273 17.6649 4.68197 17.6649 6.89167C17.6649 9.10137 16.7873 11.2206 15.225 12.7833M12.2833 3.94167C13.0645 4.72303 13.5033 5.78265 13.5033 6.8875C13.5033 7.99235 13.0645 9.05197 12.2833 9.83333M8.5 1.05833L4.33333 4.39167H1V9.39167H4.33333L8.5 12.725V1.05833Z" 
+     stroke="#EAEBF1" stroke-width="1.74545" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+);
+
+export const MuteIcon = ({ className }) => (
+  <svg     
+    className={className}
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"> 
+  <path 
+     d="M18.5 7.33333L13.5 12.3333M13.5 7.33333L18.5 12.3333M8.5 4L4.33333 7.33333H1V12.3333H4.33333L8.5 15.6667V4Z" 
+     stroke="currentColor" stroke-width="1.70909" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+);
