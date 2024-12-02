@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import IconButton from './IconButton';
 import { CollapseIcon, ExpandIcon, PlusIcon, PersonIcon, FavoriteIcon, RemoveIcon } from '../assets/Icons.jsx';
 import ListItem from './ListItem';
+import ActionMenu from './ActionMenu';
 
 const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer, addStreamerToTheater }) => {
   const [likedStreamers, setLikedStreamers] = useState([
@@ -29,15 +30,16 @@ const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer,
 
   return (
     <aside
-      className={`transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-60'} h-full flex flex-col`}
+      className={`sidebar transition-all duration-300 ${isCollapsed ? 'w-12' : 'w-60'} h-full flex flex-col`}
       style={{
         backgroundColor: isCollapsed ? 'transparent' : 'var(--secondary-background)',
-        overflowY: 'auto', // Enable vertical scrolling
+        overflow: 'visible', // Allow overflow
+        position: 'relative',
       }}
     >
       {/* Sidebar Header */}
       <div className="flex items-center justify-between w-full mb-4 p-2">
-        {!isCollapsed && <span className="font-bold text-lg">Your Streamers</span>}
+        {!isCollapsed && <span className="font-bold text-xl leading-tight">Your Streamers</span>}
         <IconButton
           icon={isCollapsed ? ExpandIcon : CollapseIcon}
           ariaLabel={isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
@@ -54,12 +56,10 @@ const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer,
             className="text-[var(--secondary-text)] hover:text-[var(--border-hover)]"
           />
           {theaterStreamers.map((streamer) => (
-            <IconButton
+            <ActionMenu
               key={streamer.id}
-              icon={PersonIcon}
-              ariaLabel={streamer.name}
-              onClick={() => unfavoriteStreamer(streamer)}
-              className="text-[var(--secondary-text)] hover:text-[var(--border-hover)] w-6 h-6"
+              streamer={streamer}
+              removeStreamer={removeStreamer}
             />
           ))}
         </div>
@@ -67,7 +67,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer,
         <div className="p-2">
           {/* Main Controls Section */}
           <div className="flex items-center justify-between mb-4">
-            <span className="font-bold text-lg">Main Controls</span>
+            <span className="font-bold text-xl leading-tight">Main Controls</span>
             <IconButton
               icon={PlusIcon}
               ariaLabel="Open controls"
@@ -77,7 +77,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer,
 
           {/* Theater Section */}
           <div className="mb-6">
-            <span className="font-bold text-lg">Theater</span>
+            <span className="font-bold text-xl leading-tight">Theater</span>
             <div className="flex flex-col space-y-2 mt-2">
               {theaterStreamers.map((streamer) => (
                 <ListItem
@@ -99,7 +99,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer,
 
           {/* Liked Streamers Section */}
           <div className="mb-6">
-            <span className="font-bold text-lg">Liked Streamers</span>
+            <span className="font-bold text-xl leading-tight">Liked Streamers</span>
             <div className="flex flex-col space-y-2 mt-2">
               {likedStreamers.map((streamer) => (
                 <ListItem
@@ -124,9 +124,9 @@ const Sidebar = ({ isCollapsed, toggleSidebar, theaterStreamers, removeStreamer,
 
           {/* Recommended Section */}
           <div className="mb-4">
-            <span className="font-bold text-lg">Recommended</span>
+            <span className="font-bold text-xl leading-tight">Recommended</span>
             <div className="flex flex-col space-y-2 mt-2">
-              {[...Array(2)].map((_, index) => (
+              {[...Array(8)].map((_, index) => (
                 <ListItem
                   key={index}
                   icon={PersonIcon}
